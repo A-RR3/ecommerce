@@ -1,4 +1,6 @@
+import 'package:ecommerce/constants.dart';
 import 'package:ecommerce/screens/home_screen.dart';
+import 'package:ecommerce/screens/splash_screen.dart';
 import 'package:ecommerce/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,9 +14,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return  GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignInScreen(),
+      theme: ThemeData(
+        scaffoldBackgroundColor: bgColor
+      ),
+      home: HomeScreen(),
     );
   }
 }
