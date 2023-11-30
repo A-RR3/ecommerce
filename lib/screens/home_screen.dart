@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                                     blurRadius: 20,
                                     spreadRadius: -17,
                                     blurStyle: BlurStyle.outer,
-                                    color: shadowColor)
+                                    color: blackColor)
                               ]),
                           child: const Icon(Icons.notifications),
                         ),

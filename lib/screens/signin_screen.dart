@@ -1,3 +1,4 @@
+import 'package:ecommerce/constants.dart';
 import 'package:ecommerce/widgets/signin_form.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,14 +26,14 @@ class SignInScreen extends StatelessWidget {
                               .textTheme
                               .headlineMedium!
                               .copyWith(
-                                  color: Colors.black,
+                                  color: blackColor,
                                   fontWeight: FontWeight.bold)),
                       Text('Login to your existing account',
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
                               .copyWith(
-                                  color: Colors.black,
+                                  color: blackColor,
                                   fontWeight: FontWeight.w500))
                     ],
                   )

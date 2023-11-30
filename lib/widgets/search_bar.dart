@@ -20,7 +20,7 @@ class MySearchBar extends StatelessWidget {
                 offset: Offset(0, 17),
                 blurRadius: 14,
                 spreadRadius: -20,
-                color: shadowColor)
+                color: blackColor)
           ]),
       child: TextField(
         decoration: InputDecoration(
