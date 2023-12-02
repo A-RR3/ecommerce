@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class LoginBotton extends StatelessWidget {
-  const LoginBotton({super.key});
+class MyBotton extends StatelessWidget {
+  const MyBotton({super.key, required this.name, required this.onPress});
+  final String name;
+  final VoidCallback onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -9,6 +11,7 @@ class LoginBotton extends StatelessWidget {
       children: [
         Expanded(
             child: MaterialButton(
+              onLongPress: onPress,
           height: 40,
           color: Theme.of(context).colorScheme.primary,
           onPressed: () {},

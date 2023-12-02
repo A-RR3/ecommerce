@@ -2,10 +2,9 @@ import 'package:ecommerce/feasures/login/controllers/signin.controller.dart';
 import 'package:ecommerce/feasures/login/widgets/checkbox_section.dart';
 import 'package:ecommerce/feasures/login/widgets/circle.widget.dart';
 import 'package:ecommerce/feasures/login/widgets/label.dart';
-import 'package:ecommerce/feasures/login/widgets/login.widget.dart';
+import 'package:ecommerce/feasures/login/widgets/botton.widget.dart';
 import 'package:ecommerce/feasures/login/widgets/my.text.form.field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +21,7 @@ class SignInForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Label(text: 'Email Address'),
-          MyTextFormField(hint: 'e.g name@example.com'),
+          const MyTextFormField(hint: 'e.g name@example.com'),
           const Gap(20),
           const Label(text: 'Password'),
           TextFormField(
@@ -48,7 +47,7 @@ class SignInForm extends StatelessWidget {
         ],
       )),
       const Gap(20),
-      const LoginBotton(),
+      MyBotton(name: 'Login',onPress: (){},),
       const Gap(20),
       const Row(
         mainAxisAlignment: MainAxisAlignment.center,

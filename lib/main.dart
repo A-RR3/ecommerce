@@ -1,4 +1,5 @@
 import 'package:ecommerce/feasures/login/screens/signin_screen.dart';
+import 'package:ecommerce/feasures/login/screens/signup.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,14 +26,14 @@ class MyApp extends StatelessWidget {
               shadow: Colors.grey[700]),
           textTheme: TextTheme(
               headlineMedium:
-                  TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  const TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
               headlineSmall:
-                  TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                  const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
               displaySmall: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
                   color: Theme.of(context).hintColor))),
-      home: const SignInScreen(),
+      home: const SignUPScreen(),
     );
   }
 }
