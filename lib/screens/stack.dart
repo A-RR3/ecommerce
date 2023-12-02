@@ -1,20 +1,19 @@
 import 'package:ecommerce/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class StackSceen extends StatelessWidget {
   const StackSceen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    //total heigh and width of our device
-    var size = MediaQuery.of(context).size;
+    // var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey,
       body: Stack(
         children: [
           Container(
-            height: size.height * .40,
+            height: Get.height*.4,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(20),
@@ -28,8 +27,8 @@ class StackSceen extends StatelessWidget {
           ),
           Center(
             child: SizedBox(
-              width: size.width * .8,
-              height: size.height * .70,
+              width: Get.width * .8,
+              height: Get.height * .70,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(13),
                 child: Container(

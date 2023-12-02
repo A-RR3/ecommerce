@@ -28,10 +28,10 @@ class HomeScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           height: 52,
                           width: 52,
-                          decoration: const BoxDecoration(
-                              color: bgColor,
+                          decoration: BoxDecoration(
+                              color: Theme.of(context).colorScheme.primary,
                               shape: BoxShape.circle,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                     offset: Offset(0, 15),
                                     blurRadius: 20,

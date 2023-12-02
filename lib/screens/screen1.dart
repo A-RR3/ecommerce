@@ -1,6 +1,5 @@
 import 'package:ecommerce/screens/screen2.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Screen1 extends StatelessWidget {
   const Screen1({super.key});
