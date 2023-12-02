@@ -1,7 +1,4 @@
-import 'package:ecommerce/feasures/login/controllers/signin.controller.dart';
 import 'package:ecommerce/feasures/login/controllers/signup.controller.dart';
-import 'package:ecommerce/feasures/login/widgets/checkbox_section.dart';
-import 'package:ecommerce/feasures/login/widgets/circle.widget.dart';
 import 'package:ecommerce/feasures/login/widgets/label.dart';
 import 'package:ecommerce/feasures/login/widgets/botton.widget.dart';
 import 'package:ecommerce/feasures/login/widgets/my.text.form.field.dart';

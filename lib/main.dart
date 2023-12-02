@@ -1,3 +1,5 @@
+import 'package:ecommerce/feasures/categories/screen/categories.screen.dart';
+import 'package:ecommerce/feasures/home/screens/home.screen.dart';
 import 'package:ecommerce/feasures/login/screens/signin_screen.dart';
 import 'package:ecommerce/feasures/login/screens/signup.screen.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,9 @@ class MyApp extends StatelessWidget {
           primaryTextTheme:
               const TextTheme(displaySmall: TextStyle(color: Colors.black)),
           colorScheme: ColorScheme.fromSeed(
-              seedColor: Colors.purple.shade700,
+              brightness: Brightness.light,
+              seedColor: Colors.white,
+              primary: Colors.purple,
               background: Colors.white,
               secondary: Colors.white38,
               surface: Colors.white60,
@@ -33,7 +37,7 @@ class MyApp extends StatelessWidget {
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
                   color: Theme.of(context).hintColor))),
-      home: const SignUPScreen(),
+      home: const HomeScreen(),
     );
   }
 }
