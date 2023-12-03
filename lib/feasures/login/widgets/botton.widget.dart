@@ -11,13 +11,13 @@ class MyBotton extends StatelessWidget {
       children: [
         Expanded(
             child: MaterialButton(
-              onLongPress: onPress,
+          onLongPress: onPress,
           height: 40,
           color: Theme.of(context).colorScheme.primary,
           onPressed: () {},
-          child: const Text(
-            'Login',
-            style: TextStyle(
+          child: Text(
+            name,
+            style: const TextStyle(
                 color: Colors.white, fontSize: 16, fontWeight: FontWeight.w400),
           ),
         ))
