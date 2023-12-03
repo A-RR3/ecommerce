@@ -1,5 +1,6 @@
 import 'package:ecommerce/constants.dart';
 import 'package:ecommerce/feasures/categories/controller/category.controller.dart';
+import 'package:ecommerce/widgets/bottom.nav.bar.dart';
 import 'package:ecommerce/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,6 +18,7 @@ class CategoriesScreen extends StatelessWidget {
         titleTextStyle: const TextStyle(
             fontWeight: FontWeight.bold, color: blackColor, fontSize: 20),
       ),
+      bottomNavigationBar: BottomeNavBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(

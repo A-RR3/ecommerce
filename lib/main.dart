@@ -1,5 +1,5 @@
 import 'package:ecommerce/feasures/categories/screen/categories.screen.dart';
-import 'package:ecommerce/feasures/home/screens/home.screen.dart';
+import 'package:ecommerce/feasures/home/home.screen.dart';
 import 'package:ecommerce/feasures/login/screens/signin_screen.dart';
 import 'package:ecommerce/feasures/login/screens/signup.screen.dart';
 import 'package:flutter/material.dart';
