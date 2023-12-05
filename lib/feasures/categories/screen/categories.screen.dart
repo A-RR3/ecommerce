@@ -1,13 +1,15 @@
 import 'package:ecommerce/constants.dart';
 import 'package:ecommerce/feasures/categories/controller/category.controller.dart';
+import 'package:ecommerce/feasures/categories/widgets/category.item.dart';
+import 'package:ecommerce/feasures/home/home.controller.dart';
 import 'package:ecommerce/widgets/bottom.nav.bar.dart';
 import 'package:ecommerce/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  CategoriesScreen({super.key}) : _controller = Get.put(CategoryController());
-  final CategoryController _controller;
+  CategoriesScreen({super.key}) : _controller = Get.find<HomeController>();
+  final HomeController _controller;
 
   @override
   Widget build(BuildContext context) {
@@ -32,24 +34,8 @@ class CategoriesScreen extends StatelessWidget {
                     mainAxisSpacing: 5,
                     childAspectRatio: 1 / .65),
                 itemBuilder: (context, index) {
-                  return Stack(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.asset("assets/images/computer.jpg",
-                            fit: BoxFit.fill),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Text(
-                          _controller.categoriesList[index].name,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                      )
-                    ],
-                  );
+                  return CategoryItem(
+                      category: _controller.categoriesList[index]);
                 },
               ),
             )

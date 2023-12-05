@@ -1,9 +1,11 @@
+import 'package:ecommerce/domain/entities/products.entity.dart';
 import 'package:ecommerce/feasures/products/widgets/bottom.sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({super.key});
+  const ProductDetailsScreen({super.key, required this.product});
+  final Product product;
 
   @override
   Widget build(BuildContext context) {

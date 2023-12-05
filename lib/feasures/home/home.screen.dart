@@ -1,75 +1,96 @@
-import 'package:ecommerce/constants.dart';
+import 'package:ecommerce/feasures/categories/widgets/category.item.dart';
+import 'package:ecommerce/feasures/home/home.controller.dart';
+import 'package:ecommerce/feasures/home/widgets/featured.product.dart';
+import 'package:ecommerce/feasures/home/widgets/home.header.dart';
+import 'package:ecommerce/feasures/products/screens/product.detail.screen.dart';
 import 'package:ecommerce/widgets/bottom.nav.bar.dart';
-import 'package:ecommerce/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key}) : _homeController = Get.put(HomeController());
+  final HomeController _homeController;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomeNavBar(),
       body: SafeArea(
-        child: Container(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Flexible(
-                flex: 2,
-                child: MySearchBar(hint: "Search Product"),
-              ),
-              Flexible(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          alignment: Alignment.center,
-                          height: 52,
-                          width: 52,
-                          decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.primary,
-                              shape: BoxShape.circle,
-                              boxShadow: const [
-                                BoxShadow(
-                                    offset: Offset(0, 15),
-                                    blurRadius: 20,
-                                    spreadRadius: -17,
-                                    blurStyle: BlurStyle.outer,
-                                    color: blackColor)
-                              ]),
-                          child: const Icon(Icons.notifications),
-                        ),
-                        Positioned(
-                          top: 0,
-                          right: 0,
-                          child: Container(
-                            padding: const EdgeInsets.all(4.0),
-                            decoration: const BoxDecoration(
-                              color: Colors.red,
-                              shape: BoxShape.circle,
-                            ),
-                            child: const Text(
-                              '5',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+          child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            const HomeHeader(),
+            Expanded(
+                child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text("Special for you"),
+                  const Gap(10),
+                  SizedBox(
+                    height: Get.height * .2,
+                    width: Get.width,
+                    child: Row(children: [
+                      Expanded(
+                          child: SizedBox(
+                        width: double.infinity,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: _homeController.categoriesList.length,
+                          itemBuilder: (context, index) => CategoryItem(
+                              category: _homeController.categoriesList[index]),
+                          separatorBuilder: (_, __) => const SizedBox(
+                            width: 15,
                           ),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+                      ))
+                    ]),
+                  ),
+                  const Gap(20),
+                  const Text("Featured Products"),
+                  const Gap(10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: List.generate(
+                        _homeController.productsList.length,
+                        (index) => InkWell(
+                              onTap: () => Get.to(ProductDetailsScreen(
+                                product: _homeController.productsList[index],
+                              )),
+                              child: FeaturedProduct(
+                                name: _homeController.productsList[index].name,
+                                price:
+                                    _homeController.productsList[index].price,
+                              ),
+                            )),
+                  ),
+                  const Gap(20),
+                  const Text("Best Selling Products"),
+                  const Gap(10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: List.generate(
+                        _homeController.productsList.length,
+                        (index) => InkWell(
+                              onTap: () => Get.to(ProductDetailsScreen(
+                                product: _homeController.productsList[index],
+                              )),
+                              child: FeaturedProduct(
+                                name: _homeController.productsList[index].name,
+                                price:
+                                    _homeController.productsList[index].price,
+                              ),
+                            )),
+                  )
+                ],
+              ),
+            ))
+          ],
         ),
-      ),
+      )),
     );
   }
 }

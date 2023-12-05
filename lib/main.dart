@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
                   color: Theme.of(context).hintColor))),
-      home: const ProductDetailsScreen(),
+      home: HomeScreen(),
     );
   }
 }
