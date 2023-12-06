@@ -1,6 +1,8 @@
 import 'package:ecommerce/constants.dart';
+import 'package:ecommerce/feasures/login/screens/splash.screen.dart';
 import 'package:ecommerce/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
@@ -58,6 +60,11 @@ class HomeHeader extends StatelessWidget {
                     ),
                   ],
                 ),
+                ElevatedButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    child: Text('Log out'))
               ],
             ),
           )

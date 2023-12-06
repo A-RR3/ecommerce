@@ -17,13 +17,9 @@ class SignInScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Welcome back!',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium),
+                        style: Theme.of(context).textTheme.headlineMedium),
                     Text('Login to your existing account',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineSmall)
+                        style: Theme.of(context).textTheme.headlineSmall)
                   ],
                 )
               ],

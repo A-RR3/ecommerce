@@ -14,7 +14,7 @@ class MyBotton extends StatelessWidget {
           onLongPress: onPress,
           height: 40,
           color: Theme.of(context).colorScheme.primary,
-          onPressed: () {},
+          onPressed: onPress,
           child: Text(
             name,
             style: const TextStyle(
