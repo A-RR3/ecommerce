@@ -22,7 +22,11 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            const SearchHeader(widget: ProductsCircle()),
+            const SearchHeader(
+                cart: BadgedContainer(
+                    icon: Icon(Icons.shopping_cart_checkout_rounded)),
+                notifications:
+                    BadgedContainer(icon: Icon(Icons.notifications))),
             Expanded(
                 child: SingleChildScrollView(
               scrollDirection: Axis.vertical,

@@ -22,11 +22,11 @@ class SearchProductScreen extends StatelessWidget {
           child: Column(
             children: [
               SearchHeader(
-                  widget: Container(
+                  filter: Container(
                 padding: const EdgeInsets.all(5),
                 alignment: Alignment.center,
-                height: 52,
-                width: 52,
+                height: 45,
+                width: 45,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white,
