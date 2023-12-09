@@ -1,7 +1,8 @@
 import 'package:ecommerce/feasures/categories/widgets/category.item.dart';
 import 'package:ecommerce/feasures/home/home.controller.dart';
 import 'package:ecommerce/feasures/home/widgets/featured.product.dart';
-import 'package:ecommerce/feasures/home/widgets/home.header.dart';
+import 'package:ecommerce/feasures/home/widgets/products.circle.widget.dart';
+import 'package:ecommerce/widgets/search.header.dart';
 import 'package:ecommerce/feasures/products/screens/product.detail.screen.dart';
 import 'package:ecommerce/widgets/bottom.nav.bar.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            const HomeHeader(),
+            const SearchHeader(widget: ProductsCircle()),
             Expanded(
                 child: SingleChildScrollView(
               scrollDirection: Axis.vertical,

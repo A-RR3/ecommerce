@@ -1,5 +1,4 @@
 import 'package:ecommerce/constants.dart';
-import 'package:ecommerce/feasures/categories/controller/category.controller.dart';
 import 'package:ecommerce/feasures/categories/widgets/category.item.dart';
 import 'package:ecommerce/feasures/home/home.controller.dart';
 import 'package:ecommerce/widgets/bottom.nav.bar.dart';

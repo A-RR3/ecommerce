@@ -10,11 +10,11 @@ class MyTextFormField extends StatelessWidget {
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
           hintText: hint,
-          labelStyle: TextStyle(shadows: [
+          labelStyle: const TextStyle(shadows: [
             BoxShadow(
               // color: Theme.of(context).colorScheme.shadow,
               color: Colors.black,
-              offset: const Offset(0, 0),
+              offset: Offset(0, 0),
               blurRadius: 30,
               spreadRadius: -17,
             )

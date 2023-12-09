@@ -60,7 +60,7 @@ class FeaturedProduct extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
         ),
-        Text('${price}')
+        Text('$price')
       ],
     );
   }

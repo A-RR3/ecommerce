@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../domain/entities/category.entity.dart';
 
 class CategoryItem extends StatelessWidget {
-   CategoryItem({super.key, required this.category});
+   const CategoryItem({super.key, required this.category});
   final Category category;
 
   @override

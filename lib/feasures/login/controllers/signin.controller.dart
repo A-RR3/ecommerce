@@ -5,14 +5,14 @@ import 'package:get/get.dart';
 
 class SignInController extends GetxController {
   bool isChecked = false;
-  TextEditingController? emailController;
-  TextEditingController? passwordControlelr;
+  TextEditingController emailController =TextEditingController();
+  TextEditingController passwordControlelr = TextEditingController();
 
   @override
-  void onInit() {
-    emailController = TextEditingController();
-    passwordControlelr = TextEditingController();
-    super.onInit();
+  void onClose() {
+    emailController.clear();
+    passwordControlelr.clear();
+    super.onClose();
   }
 
   void checkBoxValue(bool value) {
@@ -21,12 +21,10 @@ class SignInController extends GetxController {
   }
 
   void onSignIn() {
-    debugPrint('11111');
-
-    SharedPref.prefs.setString('email', emailController!.text);
-    SharedPref.prefs.setString('password', emailController!.text);
+    FocusScope.of(Get.context!).unfocus();
+    SharedPref.prefs.setString('email', emailController.text);
+    SharedPref.prefs.setString('password', emailController.text);
     SharedPref.prefs.setBool('loggedIn', true);
-    debugPrint('22222');
     Get.to(HomeScreen());
   }
 }

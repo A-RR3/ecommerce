@@ -1,4 +1,3 @@
-import 'package:ecommerce/constants.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +11,7 @@ class MySearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 30),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
       ),
@@ -21,9 +20,9 @@ class MySearchBar extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(30.0)),
           boxShadow: [
             BoxShadow(
-                offset: const Offset(0, 1),
-                blurRadius: 3,
-                spreadRadius: -2,
+                offset: const Offset(0, 2),
+                blurRadius: 5,
+                spreadRadius: -4,
                 color: Theme.of(context).colorScheme.shadow)
           ]),
       child: TextField(

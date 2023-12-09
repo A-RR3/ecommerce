@@ -1,10 +1,5 @@
 import 'package:ecommerce/data/shared.preferences.dart';
-import 'package:ecommerce/feasures/categories/screen/categories.screen.dart';
 import 'package:ecommerce/feasures/home/home.screen.dart';
-import 'package:ecommerce/feasures/login/screens/signin_screen.dart';
-import 'package:ecommerce/feasures/login/screens/signup.screen.dart';
-import 'package:ecommerce/feasures/login/screens/splash.screen.dart';
-import 'package:ecommerce/feasures/products/screens/product.detail.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,9 +22,9 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(
                 brightness: Brightness.light,
                 seedColor: Colors.white,
-                primary: Colors.purple,
+                primary: const Color.fromARGB(255, 255, 94, 244),
                 background: Colors.white,
-                secondary: Colors.white38,
+                secondary: Colors.black,
                 surface: Colors.white60,
                 error: Colors.red,
                 shadow: Colors.grey[700]),
@@ -42,7 +37,10 @@ class MyApp extends StatelessWidget {
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                     color: Theme.of(context).hintColor))),
-        home:  SharedPref.prefs.getBool('loggedIn')!?HomeScreen():SplashScreen()
+        home: HomeScreen()
+        // home: SharedPref.prefs.getBool('loggedIn')!
+        //     ? HomeScreen()
+        //     : const SplashScreen()
         );
   }
 }
