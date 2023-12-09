@@ -1,5 +1,5 @@
 import 'package:ecommerce/data/shared.preferences.dart';
-import 'package:ecommerce/feasures/home/home.screen.dart';
+import 'package:ecommerce/feasures/home/screens/home.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

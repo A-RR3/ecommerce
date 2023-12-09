@@ -22,11 +22,12 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            const SearchHeader(
+            SearchHeader(
                 cart: BadgedContainer(
-                    icon: Icon(Icons.shopping_cart_checkout_rounded)),
+                    onTap: _homeController.navigateToCart,
+                    icon: const Icon(Icons.shopping_cart_checkout_rounded)),
                 notifications:
-                    BadgedContainer(icon: Icon(Icons.notifications))),
+                    const BadgedContainer(icon: Icon(Icons.notifications))),
             Expanded(
                 child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
