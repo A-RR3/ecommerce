@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(
                 brightness: Brightness.light,
                 seedColor: Colors.white,
-                primary: const Color.fromARGB(255, 255, 94, 244),
+                primary: const Color.fromARGB(151, 130, 56, 233),
                 background: Colors.white,
                 secondary: Colors.black,
                 surface: Colors.white60,
@@ -33,10 +33,10 @@ class MyApp extends StatelessWidget {
                     const TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
                 headlineSmall:
                     const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
-                displaySmall: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: Theme.of(context).hintColor))),
+                bodySmall: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                displaySmall:
+                    TextStyle(fontSize: 12, color: Theme.of(context).hintColor),
+                displayMedium: const TextStyle(fontSize: 18))),
         home: HomeScreen()
         // home: SharedPref.prefs.getBool('loggedIn')!
         //     ? HomeScreen()

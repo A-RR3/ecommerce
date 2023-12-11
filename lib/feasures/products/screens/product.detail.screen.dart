@@ -1,11 +1,13 @@
+import 'package:ecommerce/core/utils/navigation_services.dart';
 import 'package:ecommerce/domain/entities/products.entity.dart';
-import 'package:ecommerce/feasures/products/widgets/bottom.sheet.dart';
+import 'package:ecommerce/feasures/products/controllers/ProductController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({super.key, required this.product});
+  ProductDetailsScreen({super.key, required this.product});
   final Product product;
+  final controller = Get.put(ProductController());
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class ProductDetailsScreen extends StatelessWidget {
                     style: const ButtonStyle(
                         backgroundColor:
                             MaterialStatePropertyAll(Colors.white)),
-                    onPressed: () => Get.back(),
+                    onPressed: () => NavigationServices.back(),
                     icon: const Icon(
                       Icons.arrow_back_ios,
                       size: 20,
@@ -41,7 +43,9 @@ class ProductDetailsScreen extends StatelessWidget {
                     )),
               ),
             ),
-            const DetailsBottomSheet()
+            Align(
+                alignment: Alignment.bottomCenter,
+                child: controller.openDetailsBottomSheet)
           ],
         ),
       ),

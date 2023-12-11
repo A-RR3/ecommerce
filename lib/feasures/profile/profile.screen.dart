@@ -41,7 +41,7 @@ class ProfileScreen extends StatelessWidget {
               child: GetBuilder<ProfileController>(
                   builder: (_) => ListView.separated(
                         itemCount: _controller.profileOptions.length,
-                        itemBuilder: (context, index) => ShadowContainer(
+                        itemBuilder: (context, index) => ShadowContainer( //or card
                             widget: ListTile(
                           dense: false,
                           leading: Icon(_controller.profileOptions[index].icon),

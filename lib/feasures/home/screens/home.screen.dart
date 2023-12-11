@@ -1,5 +1,7 @@
 import 'package:ecommerce/feasures/categories/widgets/category.item.dart';
 import 'package:ecommerce/feasures/home/home.controller.dart';
+import 'package:ecommerce/feasures/home/screens/cart.screen.dart';
+import 'package:ecommerce/feasures/home/screens/notification_screen.dart';
 import 'package:ecommerce/feasures/home/widgets/featured.product.dart';
 import 'package:ecommerce/feasures/home/widgets/products.circle.widget.dart';
 import 'package:ecommerce/widgets/search.header.dart';
@@ -24,17 +26,21 @@ class HomeScreen extends StatelessWidget {
           children: [
             SearchHeader(
                 cart: BadgedContainer(
-                    onTap: _homeController.navigateToCart,
+                    onTap: () => Get.to(const CartScreen()),
                     icon: const Icon(Icons.shopping_cart_checkout_rounded)),
-                notifications:
-                    const BadgedContainer(icon: Icon(Icons.notifications))),
+                notifications: BadgedContainer(
+                    onTap: () => Get.to(const NotificationScreen()),
+                    icon: const Icon(Icons.notifications))),
             Expanded(
                 child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("Special for you"),
+                  Text(
+                    "Special for you",
+                    style: Theme.of(context).textTheme.displayMedium,
+                  ),
                   const Gap(10),
                   SizedBox(
                     height: Get.height * .2,
@@ -56,7 +62,10 @@ class HomeScreen extends StatelessWidget {
                     ]),
                   ),
                   const Gap(20),
-                  const Text("Featured Products"),
+                  Text(
+                    "Featured Products",
+                    style: Theme.of(context).textTheme.displayMedium,
+                  ),
                   const Gap(10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,7 +83,10 @@ class HomeScreen extends StatelessWidget {
                             )),
                   ),
                   const Gap(20),
-                  const Text("Best Selling Products"),
+                  Text(
+                    "Best Selling Products",
+                    style: Theme.of(context).textTheme.displayMedium,
+                  ),
                   const Gap(10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

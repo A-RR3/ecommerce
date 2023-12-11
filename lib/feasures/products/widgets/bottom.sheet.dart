@@ -7,9 +7,7 @@ class DetailsBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-        alignment: Alignment.bottomCenter,
-        child: BottomSheet(
+    return BottomSheet(
             enableDrag: false,
             backgroundColor: Colors.white,
             onClosing: () {},
@@ -57,6 +55,6 @@ class DetailsBottomSheet extends StatelessWidget {
                       MyBotton(name: 'Add to chart', onPress: () {})
                     ],
                   ),
-                )));
+                ));
   }
 }

@@ -1,5 +1,8 @@
 import 'package:ecommerce/feasures/home/home.controller.dart';
+import 'package:ecommerce/feasures/home/screens/check_out_screen.dart';
+import 'package:ecommerce/widgets/default.app.bar.widget.dart';
 import 'package:ecommerce/feasures/home/widgets/labeled.price.widget.dart';
+import 'package:ecommerce/feasures/home/widgets/my_material_botton.dart';
 import 'package:ecommerce/widgets/product.item.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -11,9 +14,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Your Cart'),
-        ),
+        appBar: const DefaultAppBar(title: 'Your Cart'),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -54,13 +55,12 @@ class CartScreen extends StatelessWidget {
                                 ),
                               ))),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Flexible(
+                      Flexible(
                         child: Column(
                           children: [
                             LabeledPrice(title: 'Sub Total', price: '\$154'),
@@ -70,16 +70,8 @@ class CartScreen extends StatelessWidget {
                         ),
                       ),
                       Flexible(
-                          child: MaterialButton(
-                              color: Theme.of(context).colorScheme.primary,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 15),
-                              onPressed: () {},
-                              child: const Text(
-                                'Check Out',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 17),
-                              )))
+                          child: MyMaterialBotton(
+                              screen: CheckoutScreen(), title: 'Check Out'))
                     ],
                   ),
                 )

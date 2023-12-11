@@ -1,7 +1,6 @@
 import 'package:ecommerce/domain/entities/category.entity.dart';
 import 'package:ecommerce/domain/entities/products.entity.dart';
 import 'package:ecommerce/feasures/categories/screen/categories.screen.dart';
-import 'package:ecommerce/feasures/home/screens/cart.screen.dart';
 import 'package:ecommerce/feasures/home/screens/home.screen.dart';
 import 'package:ecommerce/feasures/products/screens/search.product.screen.dart';
 import 'package:ecommerce/feasures/products/screens/wish.list.screen.dart';
@@ -54,7 +53,4 @@ class HomeController extends GetxController {
     }
   }
 
-  void navigateToCart() async {
-    await Get.to(const CartScreen());
-  }
 }
