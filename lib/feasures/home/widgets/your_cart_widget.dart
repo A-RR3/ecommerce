@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:ecommerce/feasures/home/widgets/label_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -17,8 +18,8 @@ class YourCart extends StatelessWidget {
         ),
         const Gap(10),
         SizedBox(
-          height: Get.height * .15,
-          width: Get.width,
+          height: context.deviceSize.height * .15,
+          width: context.deviceSize.width,
           child: Row(children: [
             Expanded(
                 child: SizedBox(
@@ -29,7 +30,7 @@ class YourCart extends StatelessWidget {
                 itemBuilder: (context, index) => ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                   child: SizedBox.square(
-                    dimension: Get.width * 0.3,
+                    dimension: context.deviceSize.width * 0.3,
                     child: Image.asset("assets/images/computer.jpg",
                         fit: BoxFit.fill),
                   ),

@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/utils/navigation_services.dart';
 import 'package:ecommerce/data/shared.preferences.dart';
 import 'package:ecommerce/feasures/home/screens/home.screen.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,6 @@ class SignInController extends GetxController {
     SharedPref.prefs.setString('email', emailController.text);
     SharedPref.prefs.setString('password', emailController.text);
     SharedPref.prefs.setBool('loggedIn', true);
-    Get.to(HomeScreen());
+    NavigationServices.navigateTo(HomeScreen());
   }
 }

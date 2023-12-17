@@ -1,3 +1,5 @@
+import 'package:ecommerce/core/utils/extensions.dart';
+import 'package:ecommerce/core/utils/navigation_services.dart';
 import 'package:ecommerce/feasures/categories/widgets/category.item.dart';
 import 'package:ecommerce/feasures/home/home.controller.dart';
 import 'package:ecommerce/feasures/home/screens/cart.screen.dart';
@@ -26,10 +28,12 @@ class HomeScreen extends StatelessWidget {
           children: [
             SearchHeader(
                 cart: BadgedContainer(
-                    onTap: () => Get.to(const CartScreen()),
+                    onTap: () =>
+                        NavigationServices.navigateTo(const CartScreen()),
                     icon: const Icon(Icons.shopping_cart_checkout_rounded)),
                 notifications: BadgedContainer(
-                    onTap: () => Get.to(const NotificationScreen()),
+                    onTap: () => NavigationServices.navigateTo(
+                        const NotificationScreen()),
                     icon: const Icon(Icons.notifications))),
             Expanded(
                 child: SingleChildScrollView(
@@ -43,8 +47,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const Gap(10),
                   SizedBox(
-                    height: Get.height * .2,
-                    width: Get.width,
+                    height: context.deviceSize.height * .2,
+                    width: context.deviceSize.width,
                     child: Row(children: [
                       Expanded(
                           child: SizedBox(
@@ -72,7 +76,8 @@ class HomeScreen extends StatelessWidget {
                     children: List.generate(
                         _homeController.productsList.length,
                         (index) => InkWell(
-                              onTap: () => Get.to(ProductDetailsScreen(
+                              onTap: () => NavigationServices.navigateTo(
+                                  ProductDetailsScreen(
                                 product: _homeController.productsList[index],
                               )),
                               child: FeaturedProduct(
@@ -93,7 +98,8 @@ class HomeScreen extends StatelessWidget {
                     children: List.generate(
                         _homeController.productsList.length,
                         (index) => InkWell(
-                              onTap: () => Get.to(ProductDetailsScreen(
+                              onTap: () => NavigationServices.navigateTo(
+                                  ProductDetailsScreen(
                                 product: _homeController.productsList[index],
                               )),
                               child: FeaturedProduct(

@@ -1,4 +1,7 @@
-import 'package:ecommerce/feasures/profile/profile.controller.dart';
+import 'package:ecommerce/core/utils/extensions.dart';
+import 'package:ecommerce/core/utils/navigation_services.dart';
+import 'package:ecommerce/feasures/profile/controllers/profile.controller.dart';
+import 'package:ecommerce/feasures/profile/screens/my_cards_screen.dart';
 import 'package:ecommerce/widgets/bottom.nav.bar.dart';
 import 'package:ecommerce/widgets/shadow.container.widget.dart';
 import 'package:flutter/material.dart';
@@ -18,13 +21,13 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: Get.height * .25,
-              width: Get.width,
+              height: context.deviceSize.height * .25,
+              width: context.deviceSize.width,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox.square(
-                    dimension: Get.height * .15,
+                    dimension: context.deviceSize.height * .15,
                     child: Image.asset(
                       "assets/images/profile.jpg",
                       fit: BoxFit.fill,
@@ -41,14 +44,20 @@ class ProfileScreen extends StatelessWidget {
               child: GetBuilder<ProfileController>(
                   builder: (_) => ListView.separated(
                         itemCount: _controller.profileOptions.length,
-                        itemBuilder: (context, index) => ShadowContainer( //or card
+                        itemBuilder: (context, index) => ShadowContainer(
+                            //or card
+                            onPress: () => _controller.navigateToScreen(index),
                             widget: ListTile(
-                          dense: false,
-                          leading: Icon(_controller.profileOptions[index].icon),
-                          title: Text(_controller.profileOptions[index].name),
-                          trailing:
-                              const Icon(Icons.arrow_forward_ios_outlined),
-                        )),
+                              dense: false,
+                              leading:
+                                  Icon(_controller.profileOptions[index].icon),
+                              title:
+                                  Text(_controller.profileOptions[index].name),
+                              trailing: const Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                size: 20,
+                              ),
+                            )),
                         separatorBuilder: (_, __) => const SizedBox(height: 10),
                       )),
             )

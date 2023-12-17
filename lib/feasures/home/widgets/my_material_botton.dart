@@ -1,5 +1,5 @@
+import 'package:ecommerce/core/utils/navigation_services.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class MyMaterialBotton extends StatelessWidget {
   const MyMaterialBotton(
@@ -12,7 +12,7 @@ class MyMaterialBotton extends StatelessWidget {
     return MaterialButton(
         color: Theme.of(context).colorScheme.primary,
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-        onPressed: () => Get.to(screen),
+        onPressed: () => NavigationServices.navigateTo(screen),
         child: Text(
           title,
           style: const TextStyle(color: Colors.white, fontSize: 17),

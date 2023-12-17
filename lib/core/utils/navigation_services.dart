@@ -9,7 +9,7 @@ class NavigationServices {
   static navigateTo(Widget screen,
       {transition = Transition.fadeIn, bool removeParent = false}) {
     removeParent
-        ? Get.offAll(screen, transition: transition)
+        ? Get.offAll(()=>screen, transition: transition)
         : Get.to(screen, transition: transition);
   }
 

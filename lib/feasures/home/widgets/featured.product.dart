@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,8 +14,8 @@ class FeaturedProduct extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: Get.height * .3 / 2,
-          width: Get.width * .3,
+          height: context.deviceSize.height * .3 / 2,
+          width: context.deviceSize.width * .3,
           child: Stack(
             children: [
               LayoutBuilder(
@@ -53,7 +54,7 @@ class FeaturedProduct extends StatelessWidget {
         ),
         SizedBox(
           height: 40,
-          width: Get.width * .3,
+          width: context.deviceSize.width * .3,
           child: Text(
             name,
             maxLines: 2,

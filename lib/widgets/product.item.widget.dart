@@ -1,5 +1,5 @@
+import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard(
@@ -16,7 +16,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Get.width * .3,
+      height: context.deviceSize.width * .3,
       child: Card(
         surfaceTintColor: Colors.white,
         color: Colors.white,
@@ -34,7 +34,7 @@ class ProductCard extends StatelessWidget {
                     topLeft: Radius.circular(20),
                     bottomLeft: Radius.circular(20)),
                 child: SizedBox.square(
-                  dimension: Get.width * 0.28,
+                  dimension: context.deviceSize.width * 0.28,
                   child: Image.asset(imagePath, fit: BoxFit.fill),
                 ),
               ),

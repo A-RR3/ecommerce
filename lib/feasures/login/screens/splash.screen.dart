@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:ecommerce/feasures/login/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -43,12 +44,12 @@ class _SplashScreenState extends State<SplashScreen> {
                     SvgPicture.asset("assets/images/bg.svg", fit: BoxFit.fill)),
             SafeArea(
               child: SizedBox(
-                width: Get.width,
+                width: context.deviceSize.width,
                 child: Column(children: [
                   const Spacer(),
                   SizedBox(
-                    height: Get.height * .4,
-                    width: Get.height * .4,
+                    height: context.deviceSize.height * .4,
+                    width: context.deviceSize.height * .4,
                     child: Image.asset("assets/images/shopping.png",
                         fit: BoxFit.fill),
                   ).animate().fade(

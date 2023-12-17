@@ -25,7 +25,7 @@ class CartScreen extends StatelessWidget {
                     '5 Products',
                   ),
                 ),
-                const Gap(20),
+                const Gap(10),
                 Expanded(
                   child: GetBuilder<HomeController>(
                       builder: (controller) => ListView.separated(

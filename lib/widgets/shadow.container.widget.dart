@@ -1,15 +1,15 @@
-import 'package:ecommerce/feasures/profile/my_cards_screen.dart';
+import 'package:ecommerce/core/utils/navigation_services.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ShadowContainer extends StatelessWidget {
-  const ShadowContainer({super.key, required this.widget});
+  const ShadowContainer({super.key, required this.widget, this.onPress});
   final Widget widget;
+  final VoidCallback? onPress;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.to(const MyCardsScreen()),
+      onTap: onPress,
       child: Container(
           decoration: BoxDecoration(
               color: Colors.white,

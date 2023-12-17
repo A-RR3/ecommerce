@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:ecommerce/core/utils/navigation_services.dart';
 import 'package:ecommerce/domain/entities/products.entity.dart';
 import 'package:ecommerce/feasures/products/controllers/ProductController.dart';
@@ -16,7 +17,7 @@ class ProductDetailsScreen extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: Get.height * .45,
+              height: context.deviceSize.height * .45,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(),
                 color: Color(0xFFF5CEB8),

@@ -1,6 +1,6 @@
+import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
 
 class YourActivity extends StatelessWidget {
   const YourActivity({super.key});
@@ -16,7 +16,7 @@ class YourActivity extends StatelessWidget {
         ),
         const Gap(10),
         SizedBox(
-          height: Get.height * .4,
+          height: context.deviceSize.height * .4,
           child: ListView.builder(
               itemCount: 3,
               itemBuilder: (context, index) => Card(

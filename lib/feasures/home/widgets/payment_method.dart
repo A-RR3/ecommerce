@@ -1,7 +1,7 @@
+import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:ecommerce/feasures/home/widgets/label_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
 
 class PaymentMethod extends StatelessWidget {
   const PaymentMethod({super.key});
@@ -16,7 +16,7 @@ class PaymentMethod extends StatelessWidget {
         const Gap(10),
         SizedBox(
           height: 60,
-          width: Get.width,
+          width: context.deviceSize.width,
           child: Row(children: [
             Expanded(
                 child: SizedBox(
