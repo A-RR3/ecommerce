@@ -2,7 +2,6 @@ import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:ecommerce/feasures/home/widgets/label_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
 
 class YourCart extends StatelessWidget {
   const YourCart({super.key});

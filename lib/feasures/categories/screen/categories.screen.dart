@@ -1,43 +1,48 @@
-import 'package:ecommerce/constants.dart';
+import 'package:ecommerce/core/utils/controller.helpers.dart';
+import 'package:ecommerce/feasures/categories/controller/category.controller.dart';
 import 'package:ecommerce/feasures/categories/widgets/category.item.dart';
-import 'package:ecommerce/feasures/home/home.controller.dart';
 import 'package:ecommerce/widgets/bottom.nav.bar.dart';
+import 'package:ecommerce/widgets/default.app.bar.widget.dart';
 import 'package:ecommerce/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  CategoriesScreen({super.key}) : _controller = Get.find<HomeController>();
-  final HomeController _controller;
+  CategoriesScreen({super.key})
+      : _controller = ControllerHelpers.inject(CategoryController());
+  final CategoryController _controller;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: const Center(child: Text('Categories')),
-        titleTextStyle: const TextStyle(
-            fontWeight: FontWeight.bold, color: blackColor, fontSize: 20),
+      appBar: const DefaultAppBar(
+        title: 'Categories',
       ),
       bottomNavigationBar: BottomeNavBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
-            const MySearchBar(hint: "Search Category"),
+            MySearchBar(
+              hint: "Search Category",
+              onChanged: (value) => _controller.filterCategories(value),
+            ),
             Expanded(
-              child: GridView.builder(
-                itemCount: _controller.categoriesList.length,
+                child: GetBuilder<CategoryController>(
+              id: 'categories',
+              builder: (_) => GridView.builder(
+                itemCount: _controller.foundCategories.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: 5,
-                    childAspectRatio: 1 / .65),
+                    mainAxisSpacing: 3,
+                    crossAxisSpacing: 3,
+                    childAspectRatio: 1),
                 itemBuilder: (context, index) {
                   return CategoryItem(
-                      category: _controller.categoriesList[index]);
+                      category: _controller.foundCategories[index]);
                 },
               ),
-            )
+            ))
           ],
         ),
       ),

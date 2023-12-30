@@ -1,9 +1,10 @@
-import 'package:ecommerce/feasures/login/controllers/signin.controller.dart';
-import 'package:ecommerce/feasures/login/widgets/checkbox_section.dart';
-import 'package:ecommerce/feasures/login/widgets/circle.widget.dart';
-import 'package:ecommerce/feasures/login/widgets/label.dart';
-import 'package:ecommerce/feasures/login/widgets/botton.widget.dart';
-import 'package:ecommerce/feasures/login/widgets/my.text.form.field.dart';
+import 'package:ecommerce/feasures/registration/controllers/signin.controller.dart';
+import 'package:ecommerce/feasures/registration/screens/signup.screen.dart';
+import 'package:ecommerce/feasures/registration/widgets/checkbox_section.dart';
+import 'package:ecommerce/feasures/registration/widgets/circle.widget.dart';
+import 'package:ecommerce/feasures/registration/widgets/label.dart';
+import 'package:ecommerce/feasures/registration/widgets/botton.widget.dart';
+import 'package:ecommerce/feasures/registration/widgets/my.text.form.field.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -17,18 +18,20 @@ class SignInForm extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Column(children: [
-        Form(
-            // key: _key,
-            child: Column(
+        // Form(
+        // key: _key,
+        // child:
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Label(text: 'Email Address'),
-            const MyTextFormField(hint: 'e.g name@example.com'),
+             MyTextFormField(hint: 'e.g name@example.com',controller: _controller.emailController,),
             const Gap(20),
             const Label(text: 'Password'),
-            TextFormField(
+            TextField(
+              controller: _controller.passwordControlelr,
               keyboardType: TextInputType.visiblePassword,
-              obscureText: true,
+              obscureText: _controller.passwordInVisible,
               obscuringCharacter: '*',
               decoration: InputDecoration(
                   contentPadding: const EdgeInsets.all(10),
@@ -47,9 +50,14 @@ class SignInForm extends StatelessWidget {
             const Gap(20),
             const CheckBoxSection()
           ],
-        )),
+          // )
+        ),
         const Gap(20),
-        MyBotton(name: 'Login', onPress: _controller.onSignIn),
+        Obx(
+          () => _controller.isLoading.value
+              ? const CircularProgressIndicator()
+              : MyBotton(name: 'Login', onPress: _controller.onSignIn),
+        ),
         const Gap(20),
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -68,9 +76,12 @@ class SignInForm extends StatelessWidget {
             const Text("Dont have account?"),
             TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Sign Up',
-                  style: TextStyle(fontSize: 15, color: Colors.purple[900]),
+                child: TextButton(
+                  onPressed: () => Get.to(const SignUPScreen()),
+                  child: Text(
+                    'Sign Up',
+                    style: TextStyle(fontSize: 15, color: Colors.purple[900]),
+                  ),
                 ))
           ],
         )

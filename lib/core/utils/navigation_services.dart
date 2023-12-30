@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class NavigationServices {
-  static back({result}) {
+  static back({result = true}) {
     Get.back(result: result);
   }
 
   static navigateTo(Widget screen,
       {transition = Transition.fadeIn, bool removeParent = false}) {
     removeParent
-        ? Get.offAll(()=>screen, transition: transition)
+        ? Get.offAll(() => screen, transition: transition)
         : Get.to(screen, transition: transition);
   }
 
@@ -23,5 +23,4 @@ class NavigationServices {
             isDismissible: isDismissible, isScrollControlled: true)
         .whenComplete(() => action == null ? null : action());
   }
-
 }

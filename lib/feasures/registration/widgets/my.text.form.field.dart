@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MyTextFormField extends StatelessWidget {
-  const MyTextFormField({super.key, required this.hint});
+  const MyTextFormField({super.key, required this.hint, required this.controller});
   final String hint;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return TextField(
+      controller: controller,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
           hintText: hint,

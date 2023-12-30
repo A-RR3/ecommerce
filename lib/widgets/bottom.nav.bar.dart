@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BottomeNavBar extends StatelessWidget {
-  BottomeNavBar({super.key}) : _homeController = Get.put(HomeController());
+  BottomeNavBar({super.key})
+      : _homeController = Get.find();
   final HomeController _homeController;
 
   @override
@@ -20,30 +21,29 @@ class BottomeNavBar extends StatelessWidget {
         selectedFontSize: 14,
         unselectedFontSize: 14,
         onTap: (value) {
-          debugPrint('$value');
           _homeController.setSelectedIndex(value);
           _homeController.viewCurrentPage(value);
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
-            label: _homeController.currentIndex == 0 ? 'Home' : '',
-            icon: const Icon(Icons.home),
+            label: 'Home',
+            icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-            label: _homeController.currentIndex == 1 ? 'Categories' : '',
-            icon: const Icon(Icons.table_rows),
+            label: 'Categories',
+            icon: Icon(Icons.table_rows),
           ),
           BottomNavigationBarItem(
-            label: _homeController.currentIndex == 2 ? 'Search' : '',
-            icon: const Icon(Icons.search),
+            label: 'Search',
+            icon: Icon(Icons.search),
           ),
           BottomNavigationBarItem(
-            label: _homeController.currentIndex == 3 ? 'Liked' : '',
-            icon: const Icon(Icons.favorite_border),
+            label: 'Liked',
+            icon: Icon(Icons.favorite_border),
           ),
           BottomNavigationBarItem(
-            label: _homeController.currentIndex == 4 ? 'Profile' : '',
-            icon: const Icon(Icons.person_outline_sharp),
+            label: 'Profile',
+            icon: Icon(Icons.person_outline_sharp),
           ),
         ],
       ),

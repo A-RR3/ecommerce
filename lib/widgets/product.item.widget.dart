@@ -1,5 +1,6 @@
 import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard(
@@ -35,7 +36,18 @@ class ProductCard extends StatelessWidget {
                     bottomLeft: Radius.circular(20)),
                 child: SizedBox.square(
                   dimension: context.deviceSize.width * 0.28,
-                  child: Image.asset(imagePath, fit: BoxFit.fill),
+                  child:FadeInImage.memoryNetwork(
+                    fit: BoxFit.fill,
+                    placeholder: kTransparentImage,
+                    image: imagePath ,//?? 'https://i.imgur.com/QkIa5tT.jpeg'
+                    imageErrorBuilder: (BuildContext context, Object error,
+                        StackTrace? stackTrace) {
+                      return Center(
+                        child: Container(color: Colors.grey,child: Image.network( 'https://i.imgur.com/kKc9A5p.jpeg'),),
+                      );
+                    },
+                  ),
+
                 ),
               ),
             ),

@@ -1,12 +1,17 @@
 import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class FeaturedProduct extends StatelessWidget {
-  const FeaturedProduct({super.key, required this.name, required this.price});
+  const FeaturedProduct(
+      {super.key,
+      required this.name,
+      required this.price,
+      required this.image});
   // final Product product;
   final String name;
-  final double price;
+  final int price;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +29,20 @@ class FeaturedProduct extends StatelessWidget {
                     width: constraints.maxWidth,
                     child: ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(10)),
-                      child: Image.asset(
-                        "assets/images/computer.jpg",
+                      child: FadeInImage.memoryNetwork(
                         fit: BoxFit.fill,
+                        placeholder: kTransparentImage,
+                        image: image ?? 'https://i.imgur.com/QkIa5tT.jpeg',
+                        imageErrorBuilder: (BuildContext context, Object error,
+                            StackTrace? stackTrace) {
+                          return Center(
+                            child: Container(
+                              color: Colors.grey,
+                              child: Image.network(
+                                  'https://i.imgur.com/kKc9A5p.jpeg'),
+                            ),
+                          );
+                        },
                       ),
                     )),
               ),

@@ -1,13 +1,16 @@
 import 'dart:async';
 
 import 'package:ecommerce/core/utils/extensions.dart';
-import 'package:ecommerce/feasures/login/screens/signin_screen.dart';
+import 'package:ecommerce/feasures/home/screens/home.screen.dart';
+import 'package:ecommerce/feasures/registration/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:svg_flutter/svg.dart';
+
+import '../../../data/db/offline/cache.keys.dart';
+import '../../../data/db/offline/shared.preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -25,7 +28,9 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(seconds: 8),
       () async {
         await Navigator.of(context).push(PageTransition(
-            child: const SignInScreen(),
+            child: SharedHelper.prefs.getBool(CacheKeys.isLogin.name)!
+                ? HomeScreen()
+                : const SignInScreen(),
             type: PageTransitionType.fade,
             duration: const Duration(seconds: 3)));
       },

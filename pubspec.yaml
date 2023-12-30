@@ -43,7 +43,8 @@ dependencies:
   shared_preferences: ^2.2.2
   page_transition: ^2.1.0
   flutter_animate: ^4.3.0
-  flutter_credit_card: ^4.0.1
+  dio: ^5.4.0
+  transparent_image: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -91,6 +92,18 @@ flutter:
     - family: 'CreditCard'
       fonts:
         - asset: assets/fonts/credit-card.regular.otf
+    - family: CairoBold
+      fonts:
+        - asset: assets/fonts/Cairo-Bold.ttf
+    - family: ManropeRegular
+      fonts:
+        - asset: assets/fonts/ManropeRegular.otf
+    - family: ManropeBold
+      fonts:
+        - asset: assets/fonts/ManropeBold.otf
+    - family: ManropeSemiBold
+      fonts:
+        - asset: assets/fonts/ManropeSemiBold.otf
         
   #   - family: Trajan Pro
   #     fonts:

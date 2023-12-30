@@ -9,7 +9,7 @@ class MyCardsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const DefaultAppBar(title: 'My Cards'),
+        appBar:  const DefaultAppBar(title: 'My Cards'),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

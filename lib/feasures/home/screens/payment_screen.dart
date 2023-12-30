@@ -10,7 +10,7 @@ class PaymentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const DefaultAppBar(title: 'Payment'),
+      appBar:  const DefaultAppBar(title: 'Payment'),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),

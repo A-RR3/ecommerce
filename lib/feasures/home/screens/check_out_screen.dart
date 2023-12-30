@@ -13,7 +13,7 @@ class CheckoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const DefaultAppBar(title: 'Check Out'),
+      appBar:  const DefaultAppBar(title: 'Check Out'),
       body: Column(
         children: [
           Padding(
@@ -24,7 +24,6 @@ class CheckoutScreen extends StatelessWidget {
                     leadingLable: 'Your Address',
                     trailingText: 'change Address'),
                 const Gap(10),
-
                 const Card(
                     surfaceTintColor: Colors.white,
                     color: Colors.white,

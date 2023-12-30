@@ -1,7 +1,5 @@
 import 'package:ecommerce/core/utils/extensions.dart';
-import 'package:ecommerce/core/utils/navigation_services.dart';
 import 'package:ecommerce/feasures/profile/controllers/profile.controller.dart';
-import 'package:ecommerce/feasures/profile/screens/my_cards_screen.dart';
 import 'package:ecommerce/widgets/bottom.nav.bar.dart';
 import 'package:ecommerce/widgets/shadow.container.widget.dart';
 import 'package:flutter/material.dart';

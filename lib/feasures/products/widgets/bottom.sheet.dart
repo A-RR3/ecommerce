@@ -1,5 +1,5 @@
 import 'package:ecommerce/core/utils/extensions.dart';
-import 'package:ecommerce/feasures/login/widgets/botton.widget.dart';
+import 'package:ecommerce/feasures/registration/widgets/botton.widget.dart';
 import 'package:flutter/material.dart';
 
 class DetailsBottomSheet extends StatelessWidget {

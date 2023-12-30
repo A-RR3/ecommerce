@@ -9,7 +9,7 @@ class ShippingAddress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const DefaultAppBar(title: 'Shipping Address'),
+      appBar:  const DefaultAppBar(title: 'Shipping Address'),
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),

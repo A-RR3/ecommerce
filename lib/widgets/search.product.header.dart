@@ -1,19 +1,26 @@
 import 'package:ecommerce/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 
-class SearchHeader extends StatelessWidget {
-  const SearchHeader({super.key, this.notifications, this.cart, this.filter});
+class SearchProductHeader extends StatelessWidget {
+  const SearchProductHeader({
+    super.key,
+    this.notifications,
+    this.cart,
+    this.filter,
+    required this.onChanged,
+  });
   final Widget? notifications;
   final Widget? cart;
   final Widget? filter;
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Flexible(
+        Flexible(
           flex: 2,
-          child: MySearchBar(hint: "Search Product"),
+          child: MySearchBar(onChanged: onChanged, hint: "Search Product"),
         ),
         notifications != null
             ? Flexible(
@@ -23,7 +30,7 @@ class SearchHeader extends StatelessWidget {
             : filter != null
                 ? Flexible(
                     child: Align(
-                    alignment: Alignment.centerRight,
+                    alignment: Alignment.center,
                     child: filter!,
                   ))
                 : const Text('')

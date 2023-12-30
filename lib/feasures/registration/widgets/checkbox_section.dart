@@ -1,4 +1,4 @@
-import 'package:ecommerce/feasures/login/controllers/signin.controller.dart';
+import 'package:ecommerce/feasures/registration/controllers/signin.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,7 +1,7 @@
 import 'package:ecommerce/core/utils/extensions.dart';
 import 'package:ecommerce/core/utils/navigation_services.dart';
 import 'package:ecommerce/domain/entities/products.entity.dart';
-import 'package:ecommerce/feasures/products/controllers/ProductController.dart';
+import 'package:ecommerce/feasures/products/controllers/product.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
