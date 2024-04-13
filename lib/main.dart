@@ -1,11 +1,14 @@
-import 'package:ecommerce/constants.dart';
-import 'package:ecommerce/screens/home_screen.dart';
-import 'package:ecommerce/screens/splash_screen.dart';
-import 'package:ecommerce/screens/signin_screen.dart';
+import 'package:ecommerce/core/managers/theme_manager.dart';
+import 'package:ecommerce/data/db/offline/shared.preferences.dart';
+import 'package:ecommerce/data/db/online/dio_helper.dart';
+import 'package:ecommerce/feasures/registration/screens/splash.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedHelper.init();
+  DioHelper.init();
   runApp(const MyApp());
 }
 
@@ -14,12 +17,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: bgColor
-      ),
-      home: HomeScreen(),
-    );
+    return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: getApplicatinTheme(),
+        // home:  HomeScreen()
+        home: const SplashScreen()
+        );
   }
 }
